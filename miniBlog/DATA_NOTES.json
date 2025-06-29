@@ -1,0 +1,35 @@
+
+
+
+[
+  {
+    "id": 1,
+    "title": "Desayunar",
+    "content": "Hoy desayuné tostadas con mermelada de fresa y un café con leche.",
+    "date": "2023-10-01"
+  },
+  {
+    "id": 2,
+    "title": "Ejercicio",
+    "content": "Hice una caminata de 30 minutos por el parque y estiramientos.",
+    "date": "2023-10-02"
+  },
+  {
+    "id": 3,
+    "title": "Trabajo",
+    "content": "Trabajé en el proyecto de desarrollo web y asistí a una reunión.",
+    "date": "2023-10-03"
+  },
+  {
+    "id": 4,
+    "title": "Lectura",
+    "content": "Leí un capítulo del libro 'El Alquimista' de Paulo Coelho.",
+    "date": "2023-10-04"
+  },
+  {
+    "id": 5,
+    "title": "Cocina",
+    "content": "Preparé una cena de pasta con salsa de tomate y albahaca.",
+    "date": "2023-10-05"
+  }
+]
