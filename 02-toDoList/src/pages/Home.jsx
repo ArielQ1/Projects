@@ -33,9 +33,8 @@ export function Home () {
           ))
         }
       </div>
-      {console.log(data)}
       <Modal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)}>
-        <TaskForm isOpen={setIsOpen} />
+        <TaskForm onClose={setIsOpen} />
       </Modal>
     </div>
   )

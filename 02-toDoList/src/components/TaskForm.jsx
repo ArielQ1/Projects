@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useTask } from '../hooks/useTask'
 import { v4 as uuidv4 } from 'uuid'
 
-export function TaskForm ({ isOpen, task }) {
+export function TaskForm ({ onClose, task }) {
   const [taskName, setTaskName] = useState(task ? task.title : '')
   const [taskStatus, setTaskStatus] = useState(task ? task.status : 'pending')
   const { setTasks } = useTask()
@@ -25,23 +25,42 @@ export function TaskForm ({ isOpen, task }) {
         prevTasks.map((t) => (t.id === task.id ? updatedTask : t))
       )
     } else {
+      const defaultSubTasks = [
+        {
+          id: uuidv4(),
+          title: 'Starting',
+          status: 'pending',
+          createdAt: new Date().toISOString(),
+          isDefault: true,
+          order: 0
+        },
+        {
+          id: uuidv4(),
+          title: 'Finished',
+          status: 'pending',
+          createdAt: new Date().toISOString(),
+          isDefault: true,
+          order: 999
+        }
+      ]
+
       const newTask = {
         id: uuidv4(),
         title: taskName.trim(),
-        status: taskStatus,
-        subTasks: [],
+        status: 'pending',
+        subTasks: defaultSubTasks,
         createdAt: new Date().toISOString()
       }
       setTasks((prevTasks) => [...prevTasks, newTask])
     }
 
     setTaskName('')
-    isOpen(false)
+    onClose(false)
   }
 
   const handleCancel = () => {
     setTaskName(task ? task.title : '')
-    isOpen(false)
+    onClose(false)
   }
 
   return (
